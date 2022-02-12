@@ -23,6 +23,10 @@
     </style>
   </head>
   <body class="body-bg" >
+    <?php 
+        $mysqli= new mysqli('localhost', 'root','','crud') or die(mysqli_error($mysqli));
+        $res = $mysqli->query("select * FROM data") or die(mysqli_error($mysqli->error));
+    ?>
     <div>
         <br>
     </div>
