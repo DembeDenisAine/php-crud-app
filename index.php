@@ -138,7 +138,37 @@
                             </div>
                         </div>
                         <!-- //End Edit User Modal ---> 
-                        
+
+                        <!-- Delete user Modal ---> 
+                        <div class="modal" tabindex="-1" role="dialog" id="delete<?php echo $user['id']; ?>">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Deleting User</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form method="POST" action="process.php">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            You are about to Delete <u><?php echo $user['firstname']." ".$user['lastname']; ?></u> from the system!
+                                            <br> Are you sure you want to perfom this Action?
+
+                                            <input type="hidden" name="id" value= "<?php echo $user['id']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-sm btn-danger" 
+                                        name="delete" value="Yes, Delete">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End Delete User Modal --->
+
                     <?php endwhile; ?>
                 </tbody>
             </table>
