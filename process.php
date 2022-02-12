@@ -29,3 +29,16 @@ if (isset($_POST['edit'])){
     exit();
 }
 //end edit
+
+
+//delete a record from the database table
+if (isset($_POST['delete'])){
+
+    $id=$_POST['id'];
+
+    $query = "DELETE FROM data WHERE id='$id'";
+    $saved = $mysqli->query($query);
+    header("Location: index.php");
+    exit();
+}
+//end delete
