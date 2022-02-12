@@ -41,7 +41,7 @@
     <div class="row" >
         <div class="col-md-2" ></div>
         <div class="col-md-3 white-bg">
-            <form method="POST" action="">
+            <form method="POST" action="process.php">
                 <div class="form-group">
                 <br>
                     <input type= "text" name ="firstname" class="form-control" placeholder= "first name"> 
