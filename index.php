@@ -76,18 +76,29 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php while($user = $res->fetch_assoc()): ?>
                         <tr>
-                            <td scope="row">
+                        <td scope="row">
+                                <?php echo $user['id']; ?>
                             </td>
                             <td>
+                                <?php echo $user['firstname']; ?>
                             </td>
                             <td>
+                                <?php echo $user['lastname']; ?>
                             </td>
                             <td>
+                                <?php echo $user['dob'];  ?>
                             </td>
                             <td>
+                                <button data-toggle="modal" data-target="#edit<?php echo $user['id']; ?>"
+                                  class="btn btn-sm btn-primary">Edit</button>  | 
+
+                                <button data-toggle="modal" data-target="#delete<?php echo $user['id']; ?>"
+                                  class="btn btn-sm btn-danger">Delete</button>
                             </td>
                         </tr>
+                    <?php endwhile; ?>
                 </tbody>
             </table>
         </div>
