@@ -98,6 +98,47 @@
                                   class="btn btn-sm btn-danger">Delete</button>
                             </td>
                         </tr>
+
+                        <!-- Edit User Modal ---> 
+                        <div class="modal" tabindex="-1" role="dialog" id="edit<?php echo $user['id']; ?>">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit: <u><?php echo $user['firstname']." ".$user['lastname']; ?></u></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form method="POST" action="process.php">
+                                    <div class="modal-body">
+                                            <div class="form-group">
+                                            <br>
+                                                <input type= "text" name ="firstname" class="form-control" 
+                                                value= "<?php echo $user['firstname']; ?>"> 
+                                                <input type="hidden" name="id" value= "<?php echo $user['id']; ?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <br>
+                                                <input type= "text" name ="lastname" class="form-control" 
+                                                value= "<?php echo $user['lastname']; ?>">
+                                            </div>
+                                            <div class="form-group">
+                                            <br>
+                                                <input type="date" name ="dob" class="form-control datepicker" 
+                                                value="<?php echo $user['dob']; ?>">
+                                            </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-sm btn-primary" 
+                                        name="edit" value="Save changes">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End Edit User Modal ---> 
+                        
                     <?php endwhile; ?>
                 </tbody>
             </table>
